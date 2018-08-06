@@ -9,12 +9,12 @@ State Management System using Pub/Sub pattern
 ```js
 let store = new Store({
   mutations: {
-  sum: (state, payload) => {
-  return (state.sum = payload.reduce((acc, i) => acc + i, 0));
+    sum: (state, payload) => {
+      return (state.sum = payload.reduce((acc, i) => acc + i, 0));
   }
   },
   state: {
-  sum: 0
+    sum: 0
   }
 });
 
@@ -26,12 +26,12 @@ store.commit('sum', [1, 2, 3, 4, 5, 6, 7, 8, 9]); // store.state.sum is now 45
 ```js
 let store = new Store({
   mutations: {
-  sum: (state, payload) => {
-  return (state.sum = payload.reduce((acc, i) => acc + i, 0));
+    sum: (state, payload) => {
+      return (state.sum = payload.reduce((acc, i) => acc + i, 0));
   }
   },
   state: {
-  sum: 0
+    sum: 0
   }
 });
 
