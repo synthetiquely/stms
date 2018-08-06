@@ -42,8 +42,6 @@ store.commit('sum', [1, 2, 3, 4, 5, 6, 7, 8, 9]); // New state is { sum: 45 }
 
 ### Using actions
 
-### Subscribe to store changes
-
 ```js
 let store = new Store({
   mutations: {
