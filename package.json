@@ -1,0 +1,23 @@
+{
+  "name": "stms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "1.0.0-beta.6",
+    "esm": "^3.0.74"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ],
+    "babel": false,
+    "extensions": [
+      "js",
+      "mjs"
+    ]
+  }
+}
