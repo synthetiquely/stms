@@ -47,3 +47,30 @@ test('should commit a change to store state', (t) => {
   t.is(store.state.sum, 45);
   t.is(store.status, 'idle');
 });
+
+test('should commit a change within an action', (t) => {
+  let store = new Store({
+    mutations: {
+      sum: (state, payload) => {
+        return (state.sum = payload.reduce((acc, i) => acc + i, 0));
+      }
+    },
+    actions: {
+      calculateSum: (store, numbers) => {
+        if (Array.isArray(numbers)) {
+          store.commit('sum', numbers);
+        } else {
+          throw Error('Pass an array of numbers to calculate their sum');
+        }
+      }
+    },
+    state: {
+      sum: 0
+    }
+  });
+
+  store.dispatch('calculateSum', [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+  t.is(store.state.sum, 45);
+  t.is(store.status, 'idle');
+});
